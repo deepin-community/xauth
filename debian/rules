@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+# Install in debian/tmp to retain control through dh_install:
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/tmp
+
+# Forget no-one:
+override_dh_missing:
+	dh_missing --fail-missing
+
+override_dh_auto_test:
+	dh_auto_test -- VERBOSE=1
+
+%:
+	dh $@ --with quilt --builddirectory=build/

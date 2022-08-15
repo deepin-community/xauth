@@ -1,0 +1,27 @@
+Source: xauth
+Section: x11
+Priority: optional
+Maintainer: Deepin Developer <deepin-dev@deepin.org>
+Build-Depends:
+ debhelper-compat (= 12),
+ quilt,
+ pkg-config,
+ libx11-dev (>= 2:1.0.0),
+ libxext-dev (>= 1:1.0.0),
+ libxmuu-dev (>= 1:1.0.1),
+ xutils-dev (>= 1:7.5+4),
+ cmdtest <!nocheck>,
+Standards-Version: 4.1.1
+#Vcs-Git
+#Vcs-Browser
+
+Package: xauth
+Architecture: any
+Multi-Arch: foreign
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Description: X authentication utility
+ xauth is a small utility to read and manipulate Xauthority files, which
+ are used by servers and clients alike to control authentication and access
+ to X sessions.
